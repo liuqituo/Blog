@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>读取txt文件</title>
+</head>
+
+<body>
+<!--<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>-->
+<script>
+
+  function readTxt() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", "../assets/Loading.txt", true);
+    xhr.send(null);
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr);
+        console.log(xhr.responseText);
+      } else if(xhr.status == 404) {
+        console.log(xhr.status);
+      }
+    };
+  }
+  readTxt()
+</script>
+</body>
+
+</html>
